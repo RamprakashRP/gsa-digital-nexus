@@ -432,3 +432,21 @@ section .section-title {
         grid-template-columns: 1fr; /* Stack on small screens */
     }
 }
+
+.gallery-item-slide {
+    flex-shrink: 0;
+    width: 280px; /* Fixed width for each slide item */
+    height: 180px; /* Fixed height for consistency */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.gallery-item-slide img {
+    width: 100%; /* Ensures image takes 100% width of its parent (.gallery-item-slide) */
+    height: 100%; /* Ensures image takes 100% height of its parent */
+    object-fit: cover; /* IMPORTANT: Ensures image covers the area without distorting aspect ratio, cropping if necessary */
+    display: block;
+}
