@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css'; // This will contain specific component styles
+import './App.css'; // Contains specific component styles
 
-// Import your section components (you'll create these below)
+// Import your section components
 import Header from './components/Header';
 import WelcomeSection from './components/WelcomeSection';
 import ImpactMap from './components/ImpactMap';
 import Initiatives from './components/Initiatives';
+import AchievementsSection from './components/AchievementsSection'; // NEW component
 import DigitalFootprint from './components/DigitalFootprint';
 import Footer from './components/Footer';
 
@@ -17,6 +18,7 @@ function App() {
         <WelcomeSection />
         <ImpactMap />
         <Initiatives />
+        <AchievementsSection /> {/* NEW section added here */}
         <DigitalFootprint />
       </main>
       <Footer />

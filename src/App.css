@@ -13,77 +13,68 @@ main {
 header {
     background: linear-gradient(to right, var(--google-blue), var(--google-red));
     color: var(--text-light);
-    padding: 60px 20px;
+    padding: 80px 20px; /* More padding */
     text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 30px; /* More rounded */
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow */
 }
 
 header h1 {
-    font-size: 3.2em;
-    margin-bottom: 10px;
+    font-size: 3.5em; /* Larger title */
+    margin-bottom: 15px;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.3em; /* Larger subtitle */
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     font-weight: 300;
 }
 
 .disclaimer {
-    background-color: var(--google-yellow);
-    color: var(--text-dark);
-    padding: 10px 20px;
+    background-color: var(--google-yellow); /* Yellow background */
+    color: var(--bg-primary); /* Dark text on yellow */
+    padding: 12px 25px;
     text-align: center;
     font-weight: 600;
-    font-size: 0.9em;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-size: 1em;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: inline-block; /* To make it fit content */
 }
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
+    }
+    header p {
+        font-size: 1.1em;
     }
 }
 
 
 /* WelcomeSection styles */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
 .core-message {
     text-align: center;
-    font-size: 1.1em;
-    max-width: 700px;
+    font-size: 1.15em; /* Slightly larger text */
+    max-width: 800px; /* Wider content area */
     margin: 30px auto;
-    background-color: var(--section-bg);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: var(--bg-secondary);
+    padding: 40px; /* More padding */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+.core-message h3 {
+    font-size: 1.8em;
+    color: var(--google-green); /* Green for sub-headings */
+    margin-bottom: 20px;
+}
+
 
 /* ImpactMap styles */
 .image-showcase img {
@@ -91,11 +82,12 @@ header p {
     height: auto;
     display: block;
     margin: 0 auto 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Initiatives styles */
+
+/* Initiatives styles - using card-base */
 .initiative-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -103,21 +95,33 @@ header p {
 }
 
 .initiative-card {
-    background-color: var(--section-bg);
+    /* Inherits from .card-base */
+    @extend .card-base; /* Conceptual, React won't directly understand this. Copy card-base properties. */
+    background-color: var(--bg-secondary);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    border-radius: 12px; /* Slightly more rounded */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Darker shadow for dark theme */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 .initiative-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45); /* Enhanced shadow on hover */
 }
 
 .initiative-card h3 {
     color: var(--google-green);
-    font-size: 1.5em;
+    font-size: 1.6em; /* Slightly larger initiative titles */
     margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.initiative-card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -126,52 +130,124 @@ header p {
     }
 }
 
-/* DigitalFootprint styles */
+
+/* AchievementsSection styles - NEW */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.achievement-card {
+    @extend .card-base; /* Inherits from .card-base, copy properties */
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center content in cards */
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.achievement-card h3 {
+    color: var(--google-blue); /* Blue for achievement titles */
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    color: var(--text-secondary); /* Muted text for descriptions */
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+.achievement-card .view-link {
+    display: inline-block;
+    background-color: var(--google-green); /* Green button */
+    color: var(--bg-primary); /* Dark text on green */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.achievement-card .view-link:hover {
+    background-color: #6aa84f; /* Darker green on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+
+/* DigitalFootprint styles - Updated for more links and interactivity */
 .digital-footprint ul {
     list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px; /* More space between items */
 }
 
 .digital-footprint li {
-    background-color: var(--section-bg);
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
+    @extend .card-base; /* Inherits from .card-base, copy properties */
+    background-color: var(--bg-secondary);
+    padding: 20px 35px; /* More padding */
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .digital-footprint li:hover {
-    background-color: #e0e0e0;
+    background-color: #3b3c40; /* Slightly lighter dark on hover */
+    transform: translateY(-6px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .digital-footprint a {
     text-decoration: none;
-    color: var(--google-blue);
+    color: var(--text-primary); /* Use primary text color */
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1.2em; /* Larger links */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px; /* More space for icons */
 }
 
 .digital-footprint a:hover {
+    color: var(--accent-color); /* Accent color on hover */
     text-decoration: underline;
 }
 
-/* Footer styles */
+/* Example icons (replace with actual SVG/font-awesome if needed) */
+.digital-footprint a::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.digital-footprint .linkedin::before { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238ab4f8"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.529-4 0V19h-3V8h3v1.815c1.396-2.586 7-2.756 7 2.528V19z"/></svg>'); }
+.digital-footprint .github::before { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238ab4f8"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.61-4.033-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.731.084-.716.084-.716 1.205.086 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.776.418-1.305.762-1.605-2.665-.304-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.235-3.221-.129-.304-.539-1.524.124-3.179 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.296-1.552 3.297-1.23 3.297-1.23.665 1.655.253 2.875.126 3.179.77.84 1.232 1.911 1.232 3.221 0 4.609-2.807 5.624-5.479 5.921.429.369.816 1.095.816 2.219v3.291c0 .319.192.694.801.576C20.563 22.181 24 17.636 24 12c0-6.627-5.373-12-12-12z"/></svg>'); }
+.digital-footprint .twitter::before { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238ab4f8"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.594 0-6.492 2.959-6.492 6.603 0 .518.058 1.023.158 1.506-5.397-.271-10.19-.271-13.414-6.736C2.378 10.59 1.485 10.978.49 11.233c-.347.098-.678.147-.988.147-.643 0-1.24-.078-1.782-.234-.381.996-.583 1.637-.583 2.132 0 3.659 2.376 6.666 5.518 7.625-.494.137-1.018.207-1.555.207-.381 0-.74-.037-1.094-.099.988 3.064 3.84 5.309 7.218 5.309 8.634 0 13.066-7.143 13.066-13.435 0-.214-.004-.427-.012-.64.896-.633 1.677-1.47 2.308-2.427z"/></svg>'); }
+.digital-footprint .instagram::before { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238ab4f8"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.691 4.771-4.919 4.919-.058 1.265-.07 1.645-.07 4.85s.012 3.584.07 4.85c.148 3.252 1.691 4.771 4.919 4.919 1.265.058 1.645.07 4.85.07s3.584-.012 4.85-.07c3.252-.148 4.771-1.691 4.919-4.919.058-1.265.07-1.645.07-4.85s-.012-3.584-.07-4.85c-.148-3.252-1.691-4.771-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.691-4.771 4.919-4.919 1.265-.058 1.645-.07 4.85-.07zM12 3.737c-3.28 0-3.693.012-4.994.072-3.226.15-4.484 1.493-4.632 4.632-.056 1.301-.068 1.714-.068 4.994s.012 3.693.072 4.994c.15 3.226 1.493 4.484 4.632 4.632 1.301.056 1.714.068 4.994.068s3.693-.012 4.994-.072c3.226-.15 4.484-1.493 4.632-4.632.056-1.301.068-1.714.068-4.994s-.012-3.693-.072-4.994c-.15-3.226-1.493-4.484-4.632-4.632-1.301-.056-1.714-.068-4.994-.068zm0 1.25c-.751 0-1.442.228-2.03.626s-1.077.927-1.405 1.54c-.328.613-.53 1.304-.606 2.07-.076.766-.089 1.57-.039 2.455.051.884.225 1.745.513 2.536.287.791.737 1.488 1.325 2.083.589.595 1.288 1.045 2.085 1.332.796.287 1.657.461 2.541.513.884.052 1.688.039 2.455-.039.766-.076 1.457-.278 2.07-.606.613-.328 1.117-.791 1.54-1.405.423-.614.651-1.304.727-2.07.076-.766.089-1.57.039-2.455-.052-.884-.225-1.745-.513-2.536-.287-.791-.737-1.488-1.325-2.083-.589-.595-1.288-1.045-2.085-1.332-.796-.287-1.657-.461-2.541-.513-.884-.052-1.688-.039-2.455.039-.766.076-1.457.278-2.07.606-.613.328-1.117.791-1.54 1.405-.423.614-.651 1.304-.727 2.07zM12 8.448c2.094 0 3.793 1.699 3.793 3.793s-1.699 3.793-3.793 3.793-3.793-1.699-3.793-3.793 1.699-3.793 3.793-3.793zm0 1.25c-1.409 0-2.543 1.134-2.543 2.543s1.134 2.543 2.543 2.543 2.543-1.134 2.543-2.543-1.134-2.543-2.543-2.543zm5.021-4.789c-.642 0-1.16-.518-1.16-1.16s.518-1.16 1.16-1.16 1.16.518 1.16 1.16-.518 1.16-1.16 1.16z"/></svg>'); }
+.digital-footprint .facebook::before { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238ab4f8"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.24.195 2.24.195v2.45h-1.26c-1.247 0-1.646.776-1.646 1.572V12h2.774l-.443 2.891h-2.331v6.987C18.343 21.128 22 16.991 22 12z"/></svg>'); }
+
 footer {
     background-color: var(--bg-dark);
-    color: var(--text-light);
+    color: var(--text-secondary); /* Muted light text for footer */
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 50px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px; /* More padding */
+    margin-top: 60px;
+    border-top-left-radius: 30px; /* More rounded */
+    border-top-right-radius: 30px;
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow */
 }
 
 footer p {
@@ -180,7 +256,8 @@ footer p {
 }
 
 footer .thank-you {
-    font-size: 1.2em;
+    font-size: 1.3em; /* Larger thank you text */
     font-weight: 600;
-    color: var(--google-yellow);
+    color: var(--google-yellow); /* Yellow accent */
+    margin-bottom: 20px;
 }
