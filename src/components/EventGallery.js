@@ -7,7 +7,7 @@ function EventGallery() {
   const events = [
     {
       id: 1,
-      src: 'https://drive.google.com/file/d/1YUu9z9fl919vRne0eRH64__w2-HjuUwD/view?usp=sharing',
+      src: https://drive.google.com/file/d/1YUu9z9fl919vRne0eRH64__w2-HjuUwD/export=view,
       alt: 'NextGen Intelligence Club AI Workshop',
       caption: 'Leading an AI workshop for the NextGen Intelligence Club - Jan 2025',
     },
