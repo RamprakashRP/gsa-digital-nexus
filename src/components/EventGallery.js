@@ -4,17 +4,17 @@ function EventGallery() {
   // Array of event photos with their details
   // Keep these paths as they would be if uploaded to public/images/events
   const eventImages = [
-    '/images/events/ZVE05000.jpg',
-    '/images/events/ZVE05001.jpg',
-    '/images/events/ZVE05056.jpg',
-    '/images/events/ZVE05780.jpg',
-    '/images/events/ZVE05796.jpg',
-    '/images/events/ZVE05812.jpg',
-    '/images/events/ZVE05853.jpg',
-    '/images/events/ZVE05871.jpg',
-    '/images/events/ZVE05952.jpg',
-    '/images/events/ZVE06040.jpg',
-    '/images/events/ZVE06085.jpg',
+    '/images/events/ZVE05000.JPG',
+    '/images/events/ZVE05001.JPG',
+    '/images/events/ZVE05056.JPG',
+    '/images/events/ZVE05780.JPG',
+    '/images/events/ZVE05796.JPG',
+    '/images/events/ZVE05812.JPG',
+    '/images/events/ZVE05853.JPG',
+    '/images/events/ZVE05871.JPG',
+    '/images/events/ZVE05952.JPG',
+    '/images/events/ZVE06040.JPG',
+    '/images/events/ZVE06085.JPG',
     // Add many more images here for a smoother, less repetitive scroll.
     // Ideally, have enough images so the row content isn't immediately repeated visually.
     // Example: if 6 fit on screen, have at least 12-18 unique images.
