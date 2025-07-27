@@ -391,62 +391,96 @@ section .section-title {
     border-radius: 0;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
+/* ... (existing App.css content above this section) ... */
 
-.gallery-item {
+/* Event Gallery Slideshow styles - REVISED FOR ANIMATION FIX */
+
+.gallery-row-wrapper {
+    overflow: hidden; /* Hides content outside the row */
+    margin-bottom: 25px; /* Space between rows */
+    padding: 10px 0; /* Vertical padding within wrapper */
+    border-radius: 15px;
     background-color: var(--bg-secondary);
-    border-radius: 12px;
-    overflow: hidden; /* Ensures image corners are rounded */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; /* Indicates interactivity */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
-.gallery-item:hover {
-    transform: translateY(-8px) scale(1.02); /* Lift and slight grow */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+.gallery-row {
+    display: flex; /* Use flexbox directly for the scrolling container */
+    width: max-content; /* CRUCIAL: Ensures this container is as wide as its content */
+    animation-timing-function: linear; /* Constant speed */
+    animation-iteration-count: infinite; /* Loop infinitely */
+    /* animation-duration and animation-name will be applied by specific classes below */
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistent grid */
-    object-fit: cover; /* Ensures image covers area without distortion */
-    display: block;
-    border-bottom: 1px solid var(--border-color); /* Separator for caption */
-}
-
-.gallery-caption {
-    padding: 15px;
-    font-size: 0.95em;
-    color: var(--text-secondary);
-    text-align: center;
-    background-color: var(--bg-secondary); /* Ensure background for caption */
-}
-
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Stack on small screens */
-    }
+.gallery-row-inner {
+    display: flex; /* Flexbox to arrange images horizontally */
+    gap: 20px; /* Space between images */
+    padding: 10px; /* Padding inside the scrolling track */
+    /* flex-shrink: 0; Added to gallery-item-slide directly */
 }
 
 .gallery-item-slide {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents images from shrinking */
     width: 280px; /* Fixed width for each slide item */
     height: 180px; /* Fixed height for consistency */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
+    border-radius: 8px; /* Rounded corners for images */
+    overflow: hidden; /* Ensures image fits within rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for individual items */
+    transition: transform 0.2s ease; /* Smooth transform on hover */
     cursor: pointer;
 }
 
+.gallery-item-slide:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
 .gallery-item-slide img {
-    width: 100%; /* Ensures image takes 100% width of its parent (.gallery-item-slide) */
-    height: 100%; /* Ensures image takes 100% height of its parent */
-    object-fit: cover; /* IMPORTANT: Ensures image covers the area without distorting aspect ratio, cropping if necessary */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the container */
     display: block;
+}
+
+/* Keyframe Animations */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%); /* Scroll exactly half the duplicated content */
+    }
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(-50%); /* Start from half for seamless loop */
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/* Apply animations to specific rows */
+.gallery-row.scroll-left {
+    animation-name: scroll-left;
+    animation-duration: 60s; /* Adjust duration for desired speed */
+}
+
+.gallery-row.scroll-right {
+    animation-name: scroll-right;
+    animation-duration: 60s; /* Adjust duration for desired speed */
+}
+
+/* Adjust speed and size for responsiveness */
+@media (max-width: 768px) {
+    .gallery-item-slide {
+        width: 220px; /* Smaller width for mobile */
+        height: 150px;
+    }
+    .gallery-row.scroll-left,
+    .gallery-row.scroll-right {
+        animation-duration: 40s; /* Faster scroll on smaller screens */
+    }
 }
