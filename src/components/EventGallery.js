@@ -2,64 +2,74 @@ import React from 'react';
 
 function EventGallery() {
   // Array of event photos with their details
-  // REPLACE THESE WITH YOUR ACTUAL IMAGE LINKS AND DETAILS
-  // Ensure your images are hosted publicly (e.g., Google Drive link set to 'anyone with link can view', or directly in your Vercel project's public folder)
-  const events = [
-    {
-      id: 1,
-      src: https://drive.google.com/file/d/1YUu9z9fl919vRne0eRH64__w2-HjuUwD/export=view,
-      alt: 'NextGen Intelligence Club AI Workshop',
-      caption: 'Leading an AI workshop for the NextGen Intelligence Club - Jan 2025',
-    },
-    {
-      id: 2,
-      src: '[LINK TO PHOTO 2 - e.g., College Newsletter Launch]',
-      alt: 'College Newsletter Launch Event',
-      caption: 'Celebrating the launch of our latest College Newsletter edition - Feb 2025',
-    },
-    {
-      id: 3,
-      src: '[LINK TO PHOTO 3 - e.g., Social Media Team Meeting]',
-      alt: 'Social Media Team Strategy Meeting',
-      caption: 'Brainstorming new strategies with the College Social Media Team - March 2025',
-    },
-    {
-      id: 4,
-      src: '[LINK TO PHOTO 4 - e.g., Microsoft Learn Student Ambassador Session]',
-      alt: 'Microsoft Learn Student Ambassador Session',
-      caption: 'Empowering students with Microsoft Azure fundamentals as an MLSA - April 2025',
-    },
-    {
-      id: 5,
-      src: '[LINK TO PHOTO 5 - e.g., Arc Shift Planning Meeting]',
-      alt: 'Arc Shift Community Planning',
-      caption: 'Planning the launch and first events for Arc Shift community - May 2025',
-    },
-    {
-      id: 6,
-      src: '[LINK TO PHOTO 6 - e.g., Gemini AI Promotion Event]',
-      alt: 'Gemini AI Student Plan Promotion',
-      caption: 'Introducing students to the power of Google Gemini AI and its free plan - June 2025',
-    },
-    // Add more photos as needed
+  // Keep these paths as they would be if uploaded to public/images/events
+  const eventImages = [
+    '/images/events/ZVE05000.jpg',
+    '/images/events/ZVE05001.jpg',
+    '/images/events/ZVE05056.jpg',
+    '/images/events/ZVE05780.jpg',
+    '/images/events/ZVE05796.jpg',
+    '/images/events/ZVE05812.jpg',
+    '/images/events/ZVE05853.jpg',
+    '/images/events/ZVE05871.jpg',
+    '/images/events/ZVE05952.jpg',
+    '/images/events/ZVE06040.jpg',
+    '/images/events/ZVE06085.jpg',
+    // Add many more images here for a smoother, less repetitive scroll.
+    // Ideally, have enough images so the row content isn't immediately repeated visually.
+    // Example: if 6 fit on screen, have at least 12-18 unique images.
   ];
+
+  // Function to duplicate images for seamless looping
+  const duplicatedImages = [...eventImages, ...eventImages]; // Duplicate for infinite scroll effect
 
   return (
     <section id="event-gallery">
       <div className="container">
-        <h2 className="section-title">My Journey in Action: Event Gallery</h2>
-        <p style={{ textAlign: 'center', marginBottom: '40px', fontSize: '1.1em', color: 'var(--text-secondary)' }}>
-          A visual chronicle of my leadership, organization, and participation in various campus events and initiatives. See the impact firsthand!
+        <h2 className="section-title">My Journey in Action: Event Highlights</h2>
+        <p style={{ textAlign: 'center', marginBottom: '60px', fontSize: '1.1em', color: 'var(--text-secondary)' }}>
+          Here's a visual chronicle of the dynamic events I've participated in and organized, and the incredible teams I've had the privilege to lead and mentor. Every photo tells a story of innovation and collaboration.
         </p>
-        
-        <div className="gallery-grid">
-          {events.map((event) => (
-            <div key={event.id} className="gallery-item card-base"> {/* Using card-base for hover */}
-              <img src={event.src} alt={event.alt} />
-              <p className="gallery-caption">{event.caption}</p>
+
+        {/* First Row: Left to Right */}
+        <div className="gallery-row-wrapper">
+          <div className="gallery-row scroll-left">
+            <div className="gallery-row-inner">
+              {duplicatedImages.map((src, index) => (
+                <div key={`row1-${index}`} className="gallery-item-slide">
+                  <img src={src} alt={`Event ${index + 1}`} />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
+
+        {/* Second Row: Right to Left */}
+        <div className="gallery-row-wrapper">
+          <div className="gallery-row scroll-right">
+            <div className="gallery-row-inner">
+              {duplicatedImages.map((src, index) => (
+                <div key={`row2-${index}`} className="gallery-item-slide">
+                  <img src={src} alt={`Event ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Third Row: Left to Right */}
+        <div className="gallery-row-wrapper">
+          <div className="gallery-row scroll-left">
+            <div className="gallery-row-inner">
+              {duplicatedImages.map((src, index) => (
+                <div key={`row3-${index}`} className="gallery-item-slide">
+                  <img src={src} alt={`Event ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
