@@ -1,38 +1,186 @@
+/* Styles for the overall App component */
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+    flex-grow: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Header styles */
+header {
+    background: linear-gradient(to right, var(--google-blue), var(--google-red));
+    color: var(--text-light);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header h1 {
+    font-size: 3.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+header p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.disclaimer {
+    background-color: var(--google-yellow);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+}
+
+
+/* WelcomeSection styles */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.core-message {
+    text-align: center;
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: var(--section-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ImpactMap styles */
+.image-showcase img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Initiatives styles */
+.initiative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.initiative-card {
+    background-color: var(--section-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.initiative-card:hover {
+    transform: translateY(-5px);
+}
+
+.initiative-card h3 {
+    color: var(--google-green);
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .initiative-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* DigitalFootprint styles */
+.digital-footprint ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.digital-footprint li {
+    background-color: var(--section-bg);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.digital-footprint li:hover {
+    background-color: #e0e0e0;
+}
+
+.digital-footprint a {
+    text-decoration: none;
+    color: var(--google-blue);
+    font-weight: 600;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.digital-footprint a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+footer .thank-you {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--google-yellow);
 }

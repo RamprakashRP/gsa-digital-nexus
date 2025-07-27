@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; // This will contain specific component styles
+
+// Import your section components (you'll create these below)
+import Header from './components/Header';
+import WelcomeSection from './components/WelcomeSection';
+import ImpactMap from './components/ImpactMap';
+import Initiatives from './components/Initiatives';
+import DigitalFootprint from './components/DigitalFootprint';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <WelcomeSection />
+        <ImpactMap />
+        <Initiatives />
+        <DigitalFootprint />
+      </main>
+      <Footer />
     </div>
   );
 }
