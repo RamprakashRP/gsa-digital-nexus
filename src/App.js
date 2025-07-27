@@ -7,6 +7,7 @@ import WelcomeSection from './components/WelcomeSection';
 import ImpactMap from './components/ImpactMap';
 import Initiatives from './components/Initiatives';
 import AchievementsSection from './components/AchievementsSection';
+import EventGallery from './components/EventGallery'; 
 import DigitalFootprint from './components/DigitalFootprint';
 import Footer from './components/Footer';
 
@@ -26,8 +27,8 @@ function App() {
     fovSpeedUp: 150,
     speedUp: 2,
     carLightsFade: 0.4,
-    totalSideLightSticks: 50,
-    lightPairsPerRoadWay: 60,
+    totalSideLightSticks: 50, // More sticks for denser feel
+    lightPairsPerRoadWay: 60, // More car lights
     shoulderLinesWidthPercentage: 0.05,
     brokenLinesWidthPercentage: 0.1,
     brokenLinesLengthPercentage: 0.5,
@@ -41,14 +42,14 @@ function App() {
     carShiftX: [-0.8, 0.8],
     carFloorSeparation: [0, 5],
     colors: {
-      roadColor: 0x080808,
-      islandColor: 0x0a0a0a,
-      background: 0x000000,
-      shoulderLines: 0x303030,
-      brokenLines: 0x303030,
-      leftCars: [0x8ab4f8, 0x4285F4, 0x6750A2],
-      rightCars: [0xf28b82, 0xEA4335, 0xC247AC],
-      sticks: 0x81c995,
+      roadColor: 0x080808,     // Dark road
+      islandColor: 0x0a0a0a,   // Dark island
+      background: 0x000000,    // Pure black background for deep space feel
+      shoulderLines: 0x303030, // Darker shoulder lines
+      brokenLines: 0x303030,   // Darker broken lines
+      leftCars: [0x8ab4f8, 0x4285F4, 0x6750A2], // Google Blue shades for left cars
+      rightCars: [0xf28b82, 0xEA4335, 0xC247AC], // Google Red/Pink shades for right cars
+      sticks: 0x81c995,       // Google Green for side sticks
     }
   };
 
@@ -65,6 +66,7 @@ function App() {
           <ImpactMap />
           <Initiatives />
           <AchievementsSection />
+          <EventGallery />
           <DigitalFootprint />
         </main>
         <Footer />
