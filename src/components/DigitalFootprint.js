@@ -1,5 +1,22 @@
 import React from 'react';
 
+// SVG Icons - Replace with actual SVG paths
+const LinkedInIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.529-4 0V19h-3V8h3v1.815c1.396-2.586 7-2.756 7 2.528V19z"/></svg>
+);
+const GitHubIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.61-4.033-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.731.084-.716.084-.716 1.205.086 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.776.418-1.305.762-1.605-2.665-.304-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.235-3.221-.129-.304-.539-1.524.124-3.179 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.296-1.552 3.297-1.23 3.297-1.23.665 1.655.253 2.875.126 3.179.77.84 1.232 1.911 1.232 3.221 0 4.609-2.807 5.624-5.479 5.921.429.369.816 1.095.816 2.219v3.291c0 .319.192.694.801.576C20.563 22.181 24 17.636 24 12c0-6.627-5.373-12-12-12z"/></svg>
+);
+const TwitterIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.594 0-6.492 2.959-6.492 6.603 0 .518.058 1.023.158 1.506-5.397-.271-10.19-.271-13.414-6.736C2.378 10.59 1.485 10.978.49 11.233c-.347.098-.678.147-.988.147-.643 0-1.24-.078-1.782-.234-.381.996-.583 1.637-.583 2.132 0 3.659 2.376 6.666 5.518 7.625-.494.137-1.018.207-1.555.207-.381 0-.74-.037-1.094-.099.988 3.064 3.84 5.309 7.218 5.309 8.634 0 13.066-7.143 13.066-13.435 0-.214-.004-.427-.012-.64.896-.633 1.677-1.47 2.308-2.427z"/></svg>
+);
+const InstagramIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.691 4.771-4.919 4.919-.058 1.265-.07 1.645-.07 4.85s.012 3.584.07 4.85c.148 3.252 1.691 4.771 4.919 4.919 1.265.058 1.645.07 4.85.07s3.584-.012 4.85-.07c3.252-.148 4.771-1.691 4.919-4.919.058-1.265.07-1.645.07-4.85s-.012-3.584-.07-4.85c-.148-3.252-1.691-4.771-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.584-.07-4.85c-.148-3.252 1.691-4.771 4.919-4.919 1.265-.058 1.645-.07 4.85-.07zM12 3.737c-3.28 0-3.693.012-4.994.072-3.226.15-4.484 1.493-4.632 4.632-.056 1.301-.068 1.714-.068 4.994s.012 3.693.072 4.994c.15 3.226 1.493 4.484 4.632 4.632 1.301.056 1.714.068 4.994.068s3.693-.012 4.994-.072c3.226-.15 4.484-1.493 4.632-4.632.056-1.301.068-1.714.068-4.994s-.012-3.693-.072-4.994c-.15-3.226-1.493-4.484-4.632-4.632-1.301-.056-1.714-.068-4.994-.068zm0 1.25c-.751 0-1.442.228-2.03.626s-1.077.927-1.405 1.54c-.328.613-.53 1.304-.606 2.07-.076.766-.089 1.57-.039 2.455.051.884.225 1.745.513 2.536.287.791.737 1.488 1.325 2.083.589.595 1.288 1.045 2.085 1.332.796.287 1.657.461 2.541.513.884.052 1.688.039 2.455-.039.766-.076 1.457-.278 2.07-.606.613-.328 1.117-.791 1.54-1.405.423-.614.651-1.304.727-2.07.076-.766.089-1.57.039-2.455-.052-.884-.225-1.745-.513-2.536-.287-.791-.737-1.488-1.325-2.083-.589-.595-1.288-1.045-2.085-1.332-.796-.287-1.657-.461-2.541-.513-.884-.052-1.688-.039-2.455.039-.766.076-1.457.278-2.07.606-.613.328-1.117.791-1.54 1.405-.423.614-.651 1.304-.727 2.07zM12 8.448c2.094 0 3.793 1.699 3.793 3.793s-1.699 3.793-3.793 3.793-3.793-1.699-3.793-3.793 1.699-3.793 3.793-3.793zm0 1.25c-1.409 0-2.543 1.134-2.543 2.543s1.134 2.543 2.543 2.543 2.543-1.134 2.543-2.543-1.134-2.543-2.543-2.543zm5.021-4.789c-.642 0-1.16-.518-1.16-1.16s.518-1.16 1.16-1.16 1.16.518 1.16 1.16-.518 1.16-1.16 1.16z"/></svg>
+);
+const FacebookIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.24.195 2.24.195v2.45h-1.26c-1.247 0-1.646.776-1.646 1.572V12h2.774l-.443 2.891h-2.331v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+);
+
 function DigitalFootprint() {
   return (
     <section id="digital-footprint">
@@ -7,11 +24,11 @@ function DigitalFootprint() {
         <h2 className="section-title">My Digital Footprint: Connect & Explore More</h2>
         <p style={{ textAlign: 'center', marginBottom: '40px', fontSize: '1.1em', color: 'var(--text-secondary)' }}>Explore my professional presence and see my impact in action across various platforms. Let's connect!</p>
         <ul className="digital-footprint">
-          <li><a href="[YOUR LINKEDIN PROFILE URL]" target="_blank" rel="noopener noreferrer" className="linkedin">LinkedIn</a></li>
-          <li><a href="[YOUR GITHUB PROFILE URL]" target="_blank" rel="noopener noreferrer" className="github">GitHub</a></li>
-          <li><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer" className="twitter">Twitter</a></li>
-          <li><a href="[YOUR INSTAGRAM PROFILE URL]" target="_blank" rel="noopener noreferrer" className="instagram">Instagram</a></li>
-          <li><a href="[YOUR FACEBOOK PROFILE URL]" target="_blank" rel="noopener noreferrer" className="facebook">Facebook</a></li>
+          <li><a href="[YOUR LINKEDIN PROFILE URL]" target="_blank" rel="noopener noreferrer"> <LinkedInIcon /> LinkedIn</a></li>
+          <li><a href="[YOUR GITHUB PROFILE URL]" target="_blank" rel="noopener noreferrer"> <GitHubIcon /> GitHub</a></li>
+          <li><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer"> <TwitterIcon /> Twitter</a></li>
+          <li><a href="[YOUR INSTAGRAM PROFILE URL]" target="_blank" rel="noopener noreferrer"> <InstagramIcon /> Instagram</a></li>
+          <li><a href="[YOUR FACEBOOK PROFILE URL]" target="_blank" rel="noopener noreferrer"> <FacebookIcon /> Facebook</a></li>
           {/* Add more links as needed */}
           <li><a href="[YOUR NEXTGEN CLUB SOCIAL MEDIA/WEBSITE URL]" target="_blank" rel="noopener noreferrer">NextGen Club</a></li>
           <li><a href="[LINK TO CURATED GOOGLE DRIVE FOLDER WITH NEWSLETTER/SOCIAL MEDIA SAMPLES]" target="_blank" rel="noopener noreferrer">Newsletter/Social Media Samples</a></li>
