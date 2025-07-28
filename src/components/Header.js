@@ -1,13 +1,13 @@
 import React from 'react';
-import Particles from './Particles'; // Import Particles here
+import Particles from './Particles';
 
 function Header() {
-  // Options for the Particles background, specific to the Header
+  // Options for the Particles background, specific to the Header (REDUCED COMPLEXITY FOR PERFORMANCE)
   const particleOptions = {
-    particleCount: 300,
+    particleCount: 150, // REDUCED: Was 300
     particleSpread: 15,
     speed: 0.05,
-    particleBaseSize: 120,
+    particleBaseSize: 100, // Slightly smaller base size
     moveParticlesOnHover: true,
     particleHoverFactor: 0.5,
     alphaParticles: true,
@@ -24,12 +24,12 @@ function Header() {
 
   return (
     <header>
-      {/* Particles Background for the Header only (z-index: -1 within header) */}
+      {/* Particles Background for the Header only */}
       <div className="particles-header-background">
         <Particles {...particleOptions} />
       </div>
 
-      <div className="container header-content"> {/* Added header-content class */}
+      <div className="container header-content">
         <h1>My Digital Nexus: [Your Name]'s Vision for Google Student Ambassadorship</h1>
         <p>Welcome to an interactive experience showcasing my passion for technology, community, and self-driven learning.</p>
         <div className="disclaimer">
