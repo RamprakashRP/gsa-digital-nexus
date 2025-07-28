@@ -487,160 +487,230 @@ section .section-title {
 
 /* ... (existing App.css content above this section) ... */
 
-/* DigitalFootprint styles - FINAL ATTEMPT FOR ROW LAYOUT & AESTHETICS */
+/* ... (existing App.css content above this section) ... */
+
+/* DigitalFootprint styles - Refined Aesthetics */
 .digital-footprint ul { /* General styling for all <ul> in this section */
-    list-style: none; /* Removes bullet points from all lists */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Container for Social Media Icons (the first ul) */
 .digital-footprint .social-links-row {
-    display: flex !important; /* FORCING FLEXBOX: THIS SHOULD MAKE IT WORK */
-    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
-    justify-content: center; /* Center items horizontally in the row */
-    gap: 20px; /* Spacing between items in the row */
-    margin-top: 40px; /* Space from section title/paragraph */
-    margin-bottom: 40px; /* Space from the next row/section */
+    display: flex; /* Kept inline for robust layout as confirmed working */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
-    /* TEMPORARY DEBUGGING BACKGROUND - REMOVE AFTER FIX */
-    background-color: rgba(255, 0, 0, 0.1); /* Light red to see the UL's boundary */
-    border: 1px solid red; /* Red border to clearly see the UL */
+/* Wrapper for each social link item with label below */
+.social-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Styling for the Circular Social Media Buttons */
 .social-link-item {
-    background-color: transparent; /* No background fill */
-    width: 65px; /* Smaller fixed width for circle */
-    height: 65px; /* Smaller fixed height for circle */
-    border-radius: 50%; /* Makes it circular */
-    border: 2px solid var(--accent-color); /* Thin border, use accent color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle glow/shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background-color: var(--bg-secondary); /* Dark background for the circle */
+    width: 65px;
+    height: 65px;
+    border-radius: 50%; /* Circle shape */
+    /* Removed explicit border for a cleaner look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 0 5px rgba(255, 255, 255, 0.05); /* Subtle outer shadow, slight inner glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
     
-    display: flex; /* For centering content (icon + text) */
-    flex-direction: column; /* Stack icon and text vertically */
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
-    text-align: center;
-    overflow: hidden;
-    flex-shrink: 0; /* Prevent shrinking */
-    
+    text-decoration: none;
     cursor: pointer;
+    color: var(--text-primary);
 }
 
 .social-link-item:hover {
-    transform: translateY(-3px) scale(1.08); /* Lift and grow slightly more */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4), 0 0 10px var(--accent-color); /* More prominent glow on hover */
-    border-color: var(--google-green); /* Change border color on hover */
-}
-
-.social-link-item a {
-    text-decoration: none;
-    color: var(--text-primary); /* Default text color for the link */
-    font-weight: 600;
-    font-size: 0.8em; /* Smaller font for text below icon */
-    display: flex; /* For centering icon and text */
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; /* Space between icon and text */
-    transition: color 0.3s ease;
-    width: 100%; /* Make anchor fill the li */
-    height: 100%; /* Make anchor fill the li */
-    justify-content: center; /* Center content within anchor */
-}
-
-.social-link-item a:hover {
-    color: var(--google-green); /* Text color changes on hover */
+    transform: translateY(-5px) scale(1.1); /* Lift and grow more prominently */
+    background-color: var(--accent-color); /* Fill background with accent color on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-color); /* Stronger glow matching accent color */
     text-decoration: none;
 }
 
 /* SVG icon styling within the circular button */
-.social-link-item a svg {
-    width: 32px; /* Icon size */
+.social-link-item svg {
+    width: 32px;
     height: 32px;
-    fill: var(--accent-color); /* Initial icon color (Google Blue by default) */
+    fill: var(--accent-color); /* Icon color (Google Blue) initially */
     transition: fill 0.3s ease, transform 0.3s ease;
 }
 
-.social-link-item a:hover svg {
-    fill: var(--google-green); /* Change icon color on hover (Google Green) */
-    transform: scale(1.1); /* Slight grow effect on icon */
+.social-link-item:hover svg {
+    fill: var(--text-light); /* Icon changes to white/light on hover */
+    transform: scale(1.15);
+}
+
+/* Labels below the social icons */
+.social-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.85em;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.social-link-wrapper:hover .social-label {
+    color: var(--accent-color);
 }
 
 /* Container for Secondary Link Buttons (club & newsletter) */
-.digital-footprint .secondary-links-row { /* Use .digital-footprint for specificity */
-    display: flex; /* Make items go in a row */
-    flex-wrap: wrap; /* Allow wrapping */
-    justify-content: center; /* Center horizontally */
-    gap: 20px; /* Gap between the two boxes */
-    margin-top: 20px; /* Space from social icons */
-    margin-bottom: 40px; /* Space before footer/next section */
+.digital-footprint .secondary-links-row {
+    display: flex !important;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap !important; /* Prevent wrapping on desktop */
+    flex-direction: row !important; /* Force horizontal layout */
+    gap: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    list-style: none;
 }
 
 /* Styling for the Secondary Link Buttons (NextGen, Newsletter) */
 .secondary-link-item {
-    background-color: var(--bg-secondary);
-    border-radius: 12px; /* Standard rounded rectangle */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, #3a3b3f 100%);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
-    padding: 20px 30px; /* Adjust padding */
-    flex: 1; /* Allow items to grow and shrink */
-    min-width: 250px; /* Minimum width before wrapping */
-    max-width: calc(50% - 20px); /* To make them parallel (approx. half width with gap) */
+    padding: 28px 32px;
+    flex: 1 1 auto; /* Allow growth and shrinking */
+    min-width: 280px;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden;
     
-    display: flex; /* For centering content within the box */
+    display: flex !important;
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction: row; /* Text beside optional icon if you add one */
     cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.secondary-link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.secondary-link-item:hover::before {
+    left: 100%;
 }
 
 .secondary-link-item:hover {
-    background-color: #3b3c40;
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #5a8fd6 100%);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 30px rgba(74, 144, 226, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .secondary-link-item a {
-    color: var(--text-primary); /* Text color for these links */
-    font-size: 1.1em; /* Larger font */
-    font-weight: 600;
-    text-decoration: none; /* No underline by default */
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    color: var(--text-primary);
+    font-size: 1.2em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.secondary-link-item a:hover {
-    color: var(--accent-color);
-    text-decoration: underline; /* Underline on hover */
+.secondary-link-item a::after {
+    content: '→';
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+}
+
+.secondary-link-item:hover a {
+    color: var(--text-light);
+    transform: translateX(5px);
+}
+
+.secondary-link-item:hover a::after {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .digital-footprint .social-links-row, /* Target the social links ul specifically */
-    .secondary-links-row {
-        gap: 15px; /* Slightly less gap on mobile */
+@media (max-width: 600px) {
+    .digital-footprint .social-links-row {
+        gap: 15px;
+    }
+    
+    .digital-footprint .secondary-links-row {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 25px;
+        max-width: 100%;
+        padding: 0 15px;
     }
 
     .social-link-item {
-        width: 55px; /* Even smaller circles on mobile */
+        width: 55px;
         height: 55px;
     }
-    .social-link-item a svg {
+    .social-link-item svg {
         width: 28px;
         height: 28px;
     }
-    .social-link-item a span {
-        font-size: 0.65em; /* Smaller text on mobile */
+    .social-label {
+        font-size: 0.75em;
     }
 
     .secondary-link-item {
-        max-width: 100%; /* Stack secondary links vertically on mobile */
-        flex-direction: column;
-        padding: 15px;
+        min-width: unset;
+        max-width: unset;
+        padding: 22px 28px;
+    }
+    
+    .secondary-link-item a {
+        font-size: 1.1em;
+    }
+}
+
+/* Additional responsive breakpoint for medium screens - keep side by side */
+@media (max-width: 1024px) and (min-width: 601px) {
+    .digital-footprint .secondary-links-row {
+        gap: 25px;
+        max-width: 850px;
+        flex-wrap: nowrap; /* Ensure no wrapping */
+    }
+    
+    .secondary-link-item {
+        min-width: 250px;
+        max-width: 380px;
+        padding: 24px 28px;
+    }
+    
+    .secondary-link-item a {
+        font-size: 1.1em;
     }
 }
 

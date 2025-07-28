@@ -12,28 +12,28 @@ function AchievementsSection() {
           <div className="achievement-card card-base">
             <h3>NextGen Intelligence Club President</h3>
             <p>Led key initiatives, organized workshops, and fostered a vibrant tech community. See my impact and event highlights.</p>
-            <a href="[LINK TO GOOGLE DRIVE FOLDER FOR NEXTGEN CLUB ACHIEVEMENTS]" target="_blank" rel="noopener noreferrer" className="view-link">View Details</a>
+            <a href="https://www.instagram.com/p/DJcBtZKv9CD/?igsh=MWl0NjMwcW43amd3eQ==" target="_blank" rel="noopener noreferrer" className="view-link">View Details</a>
           </div>
 
           {/* Achievement Card 2: Microsoft Learn Student Ambassador */}
           <div className="achievement-card card-base">
             <h3>Microsoft Learn Student Ambassador</h3>
             <p>The sole MLSA on campus, demonstrating leadership in promoting diverse tech skills. View my ambassadorial activities.</p>
-            <a href="[LINK TO GOOGLE DRIVE FOLDER FOR MLSA ACTIVITIES/CERTIFICATES]" target="_blank" rel="noopener noreferrer" className="view-link">View Details</a>
+            <a href="https://www.instagram.com/p/DFNqaZXPoqA/?igsh=MWo1czJnOXhpZTY4OQ==" target="_blank" rel="noopener noreferrer" className="view-link">View Details</a>
           </div>
 
           {/* Achievement Card 3: College Newsletter Head */}
           <div className="achievement-card card-base">
-            <h3>Head, College Newsletter & Social Media</h3>
+            <h3>Head, College Newsletter</h3>
             <p>Oversaw content creation and outreach, including promoting Google's Gemini AI plan. See sample publications.</p>
-            <a href="[LINK TO GOOGLE DRIVE FOLDER FOR NEWSLETTER/SOCIAL MEDIA SAMPLES]" target="_blank" rel="noopener noreferrer" className="view-link">View Samples</a>
+            <a href="https://heyzine.com/flip-book/bd190a26bc.html#page/94" target="_blank" rel="noopener noreferrer" className="view-link">View Proof</a>
           </div>
 
           {/* Achievement Card 4: Arc Shift Chapter Captain (Upcoming) */}
           <div className="achievement-card card-base">
             <h3>Arc Shift Chapter Captain (Upcoming)</h3>
             <p>Spearheading a new community for technical insights, aligning with advanced learning goals. Learn about Arc Shift's vision.</p>
-            <a href="[LINK TO ARC SHIFT'S INTRO DOC / PLAN]" target="_blank" rel="noopener noreferrer" className="view-link">Explore Vision</a>
+            <a href="https://www.instagram.com/p/DMhgHhMRc-q/?igsh=MTdlbGVtdmxjZjM5aA==" target="_blank" rel="noopener noreferrer" className="view-link">Explore Vision</a>
           </div>
 
           {/* Add more achievement cards as needed for specific certifications, projects, etc. */}
