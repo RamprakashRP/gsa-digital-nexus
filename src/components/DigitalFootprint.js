@@ -1,7 +1,6 @@
 import React from 'react';
 
-// Inline SVG Icons for better control and bundling
-// These SVGs are typically white or a neutral color, and we'll color them via CSS 'fill' property
+
 const LinkedInIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.529-4 0V19h-3V8h3v1.815c1.396-2.586 7-2.756 7 2.528V19z"/></svg>
 );
@@ -25,13 +24,18 @@ function DigitalFootprint() {
         <h2 className="section-title">My Digital Footprint: Connect & Explore More</h2>
         <p style={{ textAlign: 'center', marginBottom: '40px', fontSize: '1.1em', color: 'var(--text-secondary)' }}>Explore my professional presence and see my impact in action across various platforms. Let's connect!</p>
         <ul className="digital-footprint">
-          <li><a href="www.linkedin.com/in/ramprakashrp2004" target="_blank" rel="noopener noreferrer"> <LinkedInIcon /> LinkedIn</a></li>
-          <li><a href="https://github.com/RamprakashRP" target="_blank" rel="noopener noreferrer"> <GitHubIcon /> GitHub</a></li>
-          <li><a href="https://www.instagram.com/ramprakash.rp_2004?igsh=MTQ2ZXgxODh2c3hrMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"> <InstagramIcon /> Instagram</a></li>
-          <li><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer"> <TwitterIcon /> Portfolio</a></li>
-          {/* Add more links as needed */}
-          <li><a href="https://www.nicsrm.in/" target="_blank" rel="noopener noreferrer">NextGen Intelligence Club</a></li>
-          <li><a href="https://heyzine.com/flip-book/bd190a26bc.html" target="_blank" rel="noopener noreferrer">Newsletter Latest Edition</a></li>
+          <li className="social-link-item"><a href="www.linkedin.com/in/ramprakashrp2004" target="_blank" rel="noopener noreferrer"> <LinkedInIcon /> <span>LinkedIn</span></a></li>
+          <li className="social-link-item"><a href="https://github.com/RamprakashRP" target="_blank" rel="noopener noreferrer"> <GitHubIcon /> <span>GitHub</span></a></li>
+          <li className="social-link-item"><a href="https://www.instagram.com/ramprakash.rp_2004?igsh=MTQ2ZXgxODh2c3hrMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"> <InstagramIcon /> <span>Instagram</span></a></li>
+          <li className="social-link-item"><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer"> <TwitterIcon /> <span>Twitter</span></a></li> {/* Changed 'Portfolio' to 'Twitter' for consistency */}
+          {/* If you want a Facebook icon too, you can uncomment this: */}
+          {/* <li className="social-link-item"><a href="[YOUR FACEBOOK PROFILE URL]" target="_blank" rel="noopener noreferrer"> <FacebookIcon /> <span>Facebook</span></a></li> */}
+        </ul>
+        
+        {/* New row for secondary links */}
+        <ul className="secondary-links-row">
+            <li className="secondary-link-item card-base"><a href="https://www.nicsrm.in/" target="_blank" rel="noopener noreferrer">NextGen Intelligence Club</a></li>
+            <li className="secondary-link-item card-base"><a href="https://heyzine.com/flip-book/bd190a26bc.html" target="_blank" rel="noopener noreferrer">Newsletter Latest Edition</a></li>
         </ul>
       </div>
     </section>
