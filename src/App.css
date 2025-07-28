@@ -487,9 +487,7 @@ section .section-title {
 
 /* ... (existing App.css content above this section) ... */
 
-/* ... (existing App.css content above this section) ... */
-
-/* DigitalFootprint styles - REVISED FOR ROW LAYOUT & AESTHETICS */
+/* DigitalFootprint styles - FINAL ATTEMPT FOR ROW LAYOUT & AESTHETICS */
 .digital-footprint ul { /* General styling for all <ul> in this section */
     list-style: none; /* Removes bullet points from all lists */
     padding: 0; /* Remove default padding */
@@ -498,12 +496,16 @@ section .section-title {
 
 /* Container for Social Media Icons (the first ul) */
 .digital-footprint .social-links-row {
-    display: flex; /* THIS IS THE CRUCIAL PART TO MAKE THEM A ROW */
+    display: flex !important; /* FORCING FLEXBOX: THIS SHOULD MAKE IT WORK */
     flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
     justify-content: center; /* Center items horizontally in the row */
     gap: 20px; /* Spacing between items in the row */
     margin-top: 40px; /* Space from section title/paragraph */
     margin-bottom: 40px; /* Space from the next row/section */
+
+    /* TEMPORARY DEBUGGING BACKGROUND - REMOVE AFTER FIX */
+    background-color: rgba(255, 0, 0, 0.1); /* Light red to see the UL's boundary */
+    border: 1px solid red; /* Red border to clearly see the UL */
 }
 
 /* Styling for the Circular Social Media Buttons */
