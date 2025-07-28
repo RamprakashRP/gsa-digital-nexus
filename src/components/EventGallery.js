@@ -15,6 +15,14 @@ function EventGallery() {
     '/images/events/ZVE05952.JPG',
     '/images/events/ZVE06040.JPG',
     '/images/events/ZVE06085.JPG',
+    '/images/events/IMG-20250728-WA0018.jpg',
+    '/images/events/IMG-20250728-WA0019.jpg',
+    '/images/events/IMG-20250728-WA0020.jpg',
+    '/images/events/IMG-20250728-WA0021.jpg',
+    '/images/events/IMG-20250728-WA0022.jpg',
+    '/images/events/IMG-20250728-WA0023.jpg',
+    '/images/events/IMG-20250728-WA0024.jpg',
+    '/images/events/IMG-20250728-WA0025.jpg'
     // Add many more images here for a smoother, less repetitive scroll.
     // Ideally, have enough images so the row content isn't immediately repeated visually.
     // Example: if 6 fit on screen, have at least 12-18 unique images.
