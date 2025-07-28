@@ -487,93 +487,159 @@ section .section-title {
 
 /* ... (existing App.css content above this section) ... */
 
-/* DigitalFootprint styles - UPDATED for Circular Buttons */
-.digital-footprint ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px; /* Spacing between circular buttons */
-    margin-top: 40px; /* Space from section title/paragraph */
+/* ... (existing App.css content above this section) ... */
+
+/* DigitalFootprint styles - REVISED FOR ROW LAYOUT & AESTHETICS */
+.digital-footprint ul { /* General styling for all <ul> in this section */
+    list-style: none; /* Removes bullet points from all lists */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
 }
 
-.digital-footprint li {
-    /* Base for the circular button */
-    background-color: var(--bg-secondary);
-    width: 100px; /* Fixed width for circle */
-    height: 100px; /* Fixed height for circle */
+/* Container for Social Media Icons (the first ul) */
+.digital-footprint .social-links-row {
+    display: flex; /* THIS IS THE CRUCIAL PART TO MAKE THEM A ROW */
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center items horizontally in the row */
+    gap: 20px; /* Spacing between items in the row */
+    margin-top: 40px; /* Space from section title/paragraph */
+    margin-bottom: 40px; /* Space from the next row/section */
+}
+
+/* Styling for the Circular Social Media Buttons */
+.social-link-item {
+    background-color: transparent; /* No background fill */
+    width: 65px; /* Smaller fixed width for circle */
+    height: 65px; /* Smaller fixed height for circle */
     border-radius: 50%; /* Makes it circular */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 2px solid var(--accent-color); /* Thin border, use accent color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle glow/shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     
-    display: flex; /* For centering content */
+    display: flex; /* For centering content (icon + text) */
     flex-direction: column; /* Stack icon and text vertically */
     align-items: center; /* Center horizontally */
     justify-content: center; /* Center vertically */
     
-    text-align: center; /* Ensures text is centered if it wraps */
-    overflow: hidden; /* Hide any overflow */
-    flex-shrink: 0; /* Prevent shrinking in flex container */
+    text-align: center;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent shrinking */
+    
+    cursor: pointer;
 }
 
-.digital-footprint li:hover {
-    background-color: #3b3c40; /* Slightly lighter dark on hover */
-    transform: translateY(-8px) scale(1.05); /* Lift and slight grow */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45); /* Enhanced shadow on hover */
+.social-link-item:hover {
+    transform: translateY(-3px) scale(1.08); /* Lift and grow slightly more */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4), 0 0 10px var(--accent-color); /* More prominent glow on hover */
+    border-color: var(--google-green); /* Change border color on hover */
 }
 
-.digital-footprint a {
+.social-link-item a {
     text-decoration: none;
     color: var(--text-primary); /* Default text color for the link */
     font-weight: 600;
-    font-size: 0.9em; /* Smaller font for text below icon */
+    font-size: 0.8em; /* Smaller font for text below icon */
     display: flex; /* For centering icon and text */
     flex-direction: column;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
-    transition: color 0.3s ease; /* Smooth color transition for text */
+    gap: 5px; /* Space between icon and text */
+    transition: color 0.3s ease;
+    width: 100%; /* Make anchor fill the li */
+    height: 100%; /* Make anchor fill the li */
+    justify-content: center; /* Center content within anchor */
 }
 
-.digital-footprint a:hover {
-    color: var(--accent-color); /* Accent color on hover */
-    text-decoration: none; /* No underline on hover for cleaner look */
+.social-link-item a:hover {
+    color: var(--google-green); /* Text color changes on hover */
+    text-decoration: none;
 }
 
 /* SVG icon styling within the circular button */
-.digital-footprint a svg {
-    width: 40px; /* Larger icon size */
-    height: 40px;
+.social-link-item a svg {
+    width: 32px; /* Icon size */
+    height: 32px;
     fill: var(--accent-color); /* Initial icon color (Google Blue by default) */
     transition: fill 0.3s ease, transform 0.3s ease;
 }
 
-.digital-footprint a:hover svg {
+.social-link-item a:hover svg {
     fill: var(--google-green); /* Change icon color on hover (Google Green) */
     transform: scale(1.1); /* Slight grow effect on icon */
 }
 
-/* Optional: Styles for non-icon links (like "NextGen Club", "Newsletter") */
-/* If these are not meant to be circular buttons, you might want to separate them */
-.digital-footprint li:nth-last-child(1),
-.digital-footprint li:nth-last-child(2) { /* Target last two items as examples for non-circular */
-    width: auto; /* Revert width */
-    height: auto; /* Revert height */
-    border-radius: 8px; /* Standard rounded rectangle */
-    padding: 15px 25px; /* Adjust padding */
+/* Container for Secondary Link Buttons (club & newsletter) */
+.digital-footprint .secondary-links-row { /* Use .digital-footprint for specificity */
+    display: flex; /* Make items go in a row */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center horizontally */
+    gap: 20px; /* Gap between the two boxes */
+    margin-top: 20px; /* Space from social icons */
+    margin-bottom: 40px; /* Space before footer/next section */
+}
+
+/* Styling for the Secondary Link Buttons (NextGen, Newsletter) */
+.secondary-link-item {
+    background-color: var(--bg-secondary);
+    border-radius: 12px; /* Standard rounded rectangle */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    
+    padding: 20px 30px; /* Adjust padding */
+    flex: 1; /* Allow items to grow and shrink */
+    min-width: 250px; /* Minimum width before wrapping */
+    max-width: calc(50% - 20px); /* To make them parallel (approx. half width with gap) */
+    
+    display: flex; /* For centering content within the box */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     flex-direction: row; /* Text beside optional icon if you add one */
-    gap: 10px;
+    cursor: pointer;
 }
-.digital-footprint li:nth-last-child(1) a,
-.digital-footprint li:nth-last-child(2) a {
-    font-size: 1.1em; /* Larger font for these */
-    color: var(--text-primary);
-    text-decoration: underline; /* Underline them */
+
+.secondary-link-item:hover {
+    background-color: #3b3c40;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
 }
-.digital-footprint li:nth-last-child(1) a:hover,
-.digital-footprint li:nth-last-child(2) a:hover {
+
+.secondary-link-item a {
+    color: var(--text-primary); /* Text color for these links */
+    font-size: 1.1em; /* Larger font */
+    font-weight: 600;
+    text-decoration: none; /* No underline by default */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.secondary-link-item a:hover {
     color: var(--accent-color);
-    text-decoration: none;
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .digital-footprint .social-links-row, /* Target the social links ul specifically */
+    .secondary-links-row {
+        gap: 15px; /* Slightly less gap on mobile */
+    }
+
+    .social-link-item {
+        width: 55px; /* Even smaller circles on mobile */
+        height: 55px;
+    }
+    .social-link-item a svg {
+        width: 28px;
+        height: 28px;
+    }
+    .social-link-item a span {
+        font-size: 0.65em; /* Smaller text on mobile */
+    }
+
+    .secondary-link-item {
+        max-width: 100%; /* Stack secondary links vertically on mobile */
+        flex-direction: column;
+        padding: 15px;
+    }
 }
 
 /* ... (existing App.css content) ... */
