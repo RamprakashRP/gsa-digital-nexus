@@ -25,14 +25,13 @@ function DigitalFootprint() {
         <h2 className="section-title">My Digital Footprint: Connect & Explore More</h2>
         <p style={{ textAlign: 'center', marginBottom: '40px', fontSize: '1.1em', color: 'var(--text-secondary)' }}>Explore my professional presence and see my impact in action across various platforms. Let's connect!</p>
         <ul className="digital-footprint">
-          <li><a href="[YOUR LINKEDIN PROFILE URL]" target="_blank" rel="noopener noreferrer"> <LinkedInIcon /> LinkedIn</a></li>
-          <li><a href="[YOUR GITHUB PROFILE URL]" target="_blank" rel="noopener noreferrer"> <GitHubIcon /> GitHub</a></li>
-          <li><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer"> <TwitterIcon /> Twitter</a></li>
-          <li><a href="[YOUR INSTAGRAM PROFILE URL]" target="_blank" rel="noopener noreferrer"> <InstagramIcon /> Instagram</a></li>
-          <li><a href="[YOUR FACEBOOK PROFILE URL]" target="_blank" rel="noopener noreferrer"> <FacebookIcon /> Facebook</a></li>
+          <li><a href="www.linkedin.com/in/ramprakashrp2004" target="_blank" rel="noopener noreferrer"> <LinkedInIcon /> LinkedIn</a></li>
+          <li><a href="https://github.com/RamprakashRP" target="_blank" rel="noopener noreferrer"> <GitHubIcon /> GitHub</a></li>
+          <li><a href="https://www.instagram.com/ramprakash.rp_2004?igsh=MTQ2ZXgxODh2c3hrMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"> <InstagramIcon /> Instagram</a></li>
+          <li><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer"> <TwitterIcon /> Portfolio</a></li>
           {/* Add more links as needed */}
-          <li><a href="[YOUR NEXTGEN CLUB SOCIAL MEDIA/WEBSITE URL]" target="_blank" rel="noopener noreferrer">NextGen Club</a></li>
-          <li><a href="[LINK TO CURATED GOOGLE DRIVE FOLDER WITH NEWSLETTER/SOCIAL MEDIA SAMPLES]" target="_blank" rel="noopener noreferrer">Newsletter/Social Media Samples</a></li>
+          <li><a href="https://www.nicsrm.in/" target="_blank" rel="noopener noreferrer">NextGen Intelligence Club</a></li>
+          <li><a href="https://heyzine.com/flip-book/bd190a26bc.html" target="_blank" rel="noopener noreferrer">Newsletter Latest Edition</a></li>
         </ul>
       </div>
     </section>

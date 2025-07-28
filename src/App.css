@@ -484,3 +484,176 @@ section .section-title {
         animation-duration: 40s; /* Faster scroll on smaller screens */
     }
 }
+
+/* ... (existing App.css content above this section) ... */
+
+/* DigitalFootprint styles - UPDATED for Circular Buttons */
+.digital-footprint ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Spacing between circular buttons */
+    margin-top: 40px; /* Space from section title/paragraph */
+}
+
+.digital-footprint li {
+    /* Base for the circular button */
+    background-color: var(--bg-secondary);
+    width: 100px; /* Fixed width for circle */
+    height: 100px; /* Fixed height for circle */
+    border-radius: 50%; /* Makes it circular */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    
+    display: flex; /* For centering content */
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    
+    text-align: center; /* Ensures text is centered if it wraps */
+    overflow: hidden; /* Hide any overflow */
+    flex-shrink: 0; /* Prevent shrinking in flex container */
+}
+
+.digital-footprint li:hover {
+    background-color: #3b3c40; /* Slightly lighter dark on hover */
+    transform: translateY(-8px) scale(1.05); /* Lift and slight grow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45); /* Enhanced shadow on hover */
+}
+
+.digital-footprint a {
+    text-decoration: none;
+    color: var(--text-primary); /* Default text color for the link */
+    font-weight: 600;
+    font-size: 0.9em; /* Smaller font for text below icon */
+    display: flex; /* For centering icon and text */
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    transition: color 0.3s ease; /* Smooth color transition for text */
+}
+
+.digital-footprint a:hover {
+    color: var(--accent-color); /* Accent color on hover */
+    text-decoration: none; /* No underline on hover for cleaner look */
+}
+
+/* SVG icon styling within the circular button */
+.digital-footprint a svg {
+    width: 40px; /* Larger icon size */
+    height: 40px;
+    fill: var(--accent-color); /* Initial icon color (Google Blue by default) */
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.digital-footprint a:hover svg {
+    fill: var(--google-green); /* Change icon color on hover (Google Green) */
+    transform: scale(1.1); /* Slight grow effect on icon */
+}
+
+/* Optional: Styles for non-icon links (like "NextGen Club", "Newsletter") */
+/* If these are not meant to be circular buttons, you might want to separate them */
+.digital-footprint li:nth-last-child(1),
+.digital-footprint li:nth-last-child(2) { /* Target last two items as examples for non-circular */
+    width: auto; /* Revert width */
+    height: auto; /* Revert height */
+    border-radius: 8px; /* Standard rounded rectangle */
+    padding: 15px 25px; /* Adjust padding */
+    flex-direction: row; /* Text beside optional icon if you add one */
+    gap: 10px;
+}
+.digital-footprint li:nth-last-child(1) a,
+.digital-footprint li:nth-last-child(2) a {
+    font-size: 1.1em; /* Larger font for these */
+    color: var(--text-primary);
+    text-decoration: underline; /* Underline them */
+}
+.digital-footprint li:nth-last-child(1) a:hover,
+.digital-footprint li:nth-last-child(2) a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* ... (existing App.css content) ... */
+
+/* WhyMeSection styles - NEW */
+.why-me-content {
+    /* Inherits card-base for shadow and hover */
+    text-align: center;
+    padding: 40px;
+    margin: 0 auto; /* Center the content box */
+    max-width: 800px; /* Constrain width for readability */
+}
+
+.why-me-content h3 {
+    font-size: 1.8em;
+    color: var(--google-blue); /* Consistent blue heading */
+    margin-bottom: 15px;
+    display: flex; /* For icon alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.why-me-content p {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.why-me-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.point-card {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    text-align: left; /* Align text within point cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.point-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.point-card h3 {
+    color: var(--google-green); /* Green for point headings */
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.point-card .icon-marker {
+    font-size: 1.5em;
+    line-height: 1;
+    color: var(--google-yellow); /* Yellow for marker icons */
+}
+
+.point-card p {
+    font-size: 0.95em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .why-me-points {
+        grid-template-columns: 1fr; /* Stack points on small screens */
+    }
+    .why-me-content {
+        padding: 20px;
+    }
+    .point-card h3 {
+        font-size: 1.3em;
+    }
+    .point-card p {
+        font-size: 0.9em;
+    }
+}

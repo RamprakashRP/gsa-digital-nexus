@@ -8,6 +8,7 @@ import ImpactMap from './components/ImpactMap';
 import Initiatives from './components/Initiatives';
 import AchievementsSection from './components/AchievementsSection';
 import EventGallery from './components/EventGallery';
+import WhyMeSection from './components/WhyMeSection'; // NEW IMPORT
 import DigitalFootprint from './components/DigitalFootprint';
 import Footer from './components/Footer';
 
@@ -66,6 +67,7 @@ function App() {
           <Initiatives />
           <AchievementsSection />
           <EventGallery />
+          <WhyMeSection />
           <DigitalFootprint />
         </main>
         <Footer />
