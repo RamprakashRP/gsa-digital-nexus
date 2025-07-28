@@ -23,17 +23,19 @@ function DigitalFootprint() {
       <div className="container">
         <h2 className="section-title">My Digital Footprint: Connect & Explore More</h2>
         <p style={{ textAlign: 'center', marginBottom: '40px', fontSize: '1.1em', color: 'var(--text-secondary)' }}>Explore my professional presence and see my impact in action across various platforms. Let's connect!</p>
-        <ul className="digital-footprint">
+
+        {/* Social Media Icons Row */}
+        <ul className="social-links-row"> {/* ADD THIS CLASS HERE */}
           <li className="social-link-item"><a href="www.linkedin.com/in/ramprakashrp2004" target="_blank" rel="noopener noreferrer"> <LinkedInIcon /> <span>LinkedIn</span></a></li>
           <li className="social-link-item"><a href="https://github.com/RamprakashRP" target="_blank" rel="noopener noreferrer"> <GitHubIcon /> <span>GitHub</span></a></li>
           <li className="social-link-item"><a href="https://www.instagram.com/ramprakash.rp_2004?igsh=MTQ2ZXgxODh2c3hrMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"> <InstagramIcon /> <span>Instagram</span></a></li>
-          <li className="social-link-item"><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer"> <TwitterIcon /> <span>Twitter</span></a></li> {/* Changed 'Portfolio' to 'Twitter' for consistency */}
-          {/* If you want a Facebook icon too, you can uncomment this: */}
+          <li className="social-link-item"><a href="[YOUR TWITTER PROFILE URL]" target="_blank" rel="noopener noreferrer"> <TwitterIcon /> <span>Twitter</span></a></li>
+          {/* Optional: Add Facebook if desired */}
           {/* <li className="social-link-item"><a href="[YOUR FACEBOOK PROFILE URL]" target="_blank" rel="noopener noreferrer"> <FacebookIcon /> <span>Facebook</span></a></li> */}
         </ul>
-        
-        {/* New row for secondary links */}
-        <ul className="secondary-links-row">
+
+        {/* Secondary Links Row */}
+        <ul className="secondary-links-row"> {/* THIS CLASS IS ALREADY HERE FROM PREVIOUS UPDATE */}
             <li className="secondary-link-item card-base"><a href="https://www.nicsrm.in/" target="_blank" rel="noopener noreferrer">NextGen Intelligence Club</a></li>
             <li className="secondary-link-item card-base"><a href="https://heyzine.com/flip-book/bd190a26bc.html" target="_blank" rel="noopener noreferrer">Newsletter Latest Edition</a></li>
         </ul>
@@ -41,5 +43,6 @@ function DigitalFootprint() {
     </section>
   );
 }
+
 
 export default DigitalFootprint;

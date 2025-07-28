@@ -490,26 +490,31 @@ section .section-title {
 /* ... (existing App.css content above this section) ... */
 
 /* DigitalFootprint styles - REVISED FOR ROW LAYOUT & AESTHETICS */
-.digital-footprint ul,
-.secondary-links-row { /* Apply flex properties to both unordered lists */
-    list-style: none; /* Remove bullet points */
+.digital-footprint ul { /* General styling for all <ul> in this section */
+    list-style: none; /* Removes bullet points */
     padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+/* Container for Social Media Icons (the first ul) */
+.digital-footprint .social-links-row { /* Assuming you add this class to the first ul or use :first-of-type */
     display: flex; /* Makes items go in a row */
     flex-wrap: wrap; /* Allows items to wrap to the next line */
     justify-content: center; /* Center items horizontally */
     gap: 20px; /* Spacing between items in the row */
     margin-top: 40px; /* Space from section title/paragraph */
-    margin-bottom: 20px; /* Space between the two rows */
+    margin-bottom: 40px; /* Space from the next row/section */
 }
 
 /* Styling for the Circular Social Media Buttons */
 .social-link-item {
-    background-color: var(--bg-secondary);
-    width: 70px; /* Smaller fixed width for circle */
-    height: 70px; /* Smaller fixed height for circle */
+    background-color: transparent; /* No background fill */
+    width: 65px; /* Smaller fixed width for circle */
+    height: 65px; /* Smaller fixed height for circle */
     border-radius: 50%; /* Makes it circular */
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 2px solid var(--accent-color); /* Thin border, use accent color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle glow/shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     
     display: flex; /* For centering content (icon + text) */
     flex-direction: column; /* Stack icon and text vertically */
@@ -520,14 +525,13 @@ section .section-title {
     overflow: hidden;
     flex-shrink: 0; /* Prevent shrinking */
     
-    /* Ensure the anchor covers the whole area */
-    position: relative;
+    cursor: pointer;
 }
 
 .social-link-item:hover {
-    background-color: #3b3c40; /* Slightly lighter dark on hover */
-    transform: translateY(-5px) scale(1.08); /* Lift and grow slightly more */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.45); /* Enhanced shadow on hover */
+    transform: translateY(-3px) scale(1.08); /* Lift and grow slightly more */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4), 0 0 10px var(--accent-color); /* More prominent glow on hover */
+    border-color: var(--google-green); /* Change border color on hover */
 }
 
 .social-link-item a {
@@ -546,14 +550,14 @@ section .section-title {
 }
 
 .social-link-item a:hover {
-    color: var(--accent-color); /* Accent color on hover */
+    color: var(--google-green); /* Text color changes on hover */
     text-decoration: none;
 }
 
 /* SVG icon styling within the circular button */
 .social-link-item a svg {
-    width: 30px; /* Icon size */
-    height: 30px;
+    width: 32px; /* Larger icon size */
+    height: 32px;
     fill: var(--accent-color); /* Initial icon color (Google Blue by default) */
     transition: fill 0.3s ease, transform 0.3s ease;
 }
@@ -563,30 +567,34 @@ section .section-title {
     transform: scale(1.1); /* Slight grow effect on icon */
 }
 
-
-/* Styling for the Secondary Link Buttons (NextGen, Newsletter) */
+/* Container for Secondary Link Buttons (club & newsletter) */
 .secondary-links-row {
-    margin-top: 20px; /* Space from social icons */
-    /* Inherits flex properties from the general ul styling above */
+    display: flex; /* Make items go in a row */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center horizontally */
     gap: 20px; /* Gap between the two boxes */
+    margin-top: 20px; /* Space from social icons */
+    margin-bottom: 40px; /* Space before footer/next section */
 }
 
+/* Styling for the Secondary Link Buttons (NextGen, Newsletter) */
 .secondary-link-item {
     background-color: var(--bg-secondary);
     border-radius: 12px; /* Standard rounded rectangle */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     
-    padding: 15px 25px; /* Adjust padding */
+    padding: 20px 30px; /* Adjust padding */
     flex: 1; /* Allow items to grow and shrink */
-    min-width: 280px; /* Minimum width before wrapping */
-    max-width: 48%; /* To make them parallel (approx. half width with gap) */
+    min-width: 250px; /* Minimum width before wrapping */
+    max-width: calc(50% - 20px); /* To make them parallel with gap */
     
     display: flex; /* For centering content within the box */
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction: row; /* Default for text beside optional icon */
+    flex-direction: row; /* Text beside optional icon if you add one */
+    cursor: pointer;
 }
 
 .secondary-link-item:hover {
@@ -616,20 +624,20 @@ section .section-title {
     }
 
     .social-link-item {
-        width: 60px; /* Even smaller circles on mobile */
-        height: 60px;
+        width: 55px; /* Even smaller circles on mobile */
+        height: 55px;
     }
     .social-link-item a svg {
-        width: 25px;
-        height: 25px;
+        width: 28px;
+        height: 28px;
     }
     .social-link-item a span {
-        font-size: 0.7em; /* Smaller text on mobile */
+        font-size: 0.65em; /* Smaller text on mobile */
     }
 
     .secondary-link-item {
         max-width: 100%; /* Stack secondary links vertically on mobile */
-        flex-direction: column; /* Stack content within them if icons are added */
+        flex-direction: column;
         padding: 15px;
     }
 }
