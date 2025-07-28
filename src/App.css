@@ -491,16 +491,16 @@ section .section-title {
 
 /* DigitalFootprint styles - REVISED FOR ROW LAYOUT & AESTHETICS */
 .digital-footprint ul { /* General styling for all <ul> in this section */
-    list-style: none; /* Removes bullet points */
-    padding: 0;
+    list-style: none; /* Removes bullet points from all lists */
+    padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
 }
 
 /* Container for Social Media Icons (the first ul) */
-.digital-footprint .social-links-row { /* Assuming you add this class to the first ul or use :first-of-type */
-    display: flex; /* Makes items go in a row */
-    flex-wrap: wrap; /* Allows items to wrap to the next line */
-    justify-content: center; /* Center items horizontally */
+.digital-footprint .social-links-row {
+    display: flex; /* THIS IS THE CRUCIAL PART TO MAKE THEM A ROW */
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center items horizontally in the row */
     gap: 20px; /* Spacing between items in the row */
     margin-top: 40px; /* Space from section title/paragraph */
     margin-bottom: 40px; /* Space from the next row/section */
@@ -556,7 +556,7 @@ section .section-title {
 
 /* SVG icon styling within the circular button */
 .social-link-item a svg {
-    width: 32px; /* Larger icon size */
+    width: 32px; /* Icon size */
     height: 32px;
     fill: var(--accent-color); /* Initial icon color (Google Blue by default) */
     transition: fill 0.3s ease, transform 0.3s ease;
@@ -568,7 +568,7 @@ section .section-title {
 }
 
 /* Container for Secondary Link Buttons (club & newsletter) */
-.secondary-links-row {
+.digital-footprint .secondary-links-row { /* Use .digital-footprint for specificity */
     display: flex; /* Make items go in a row */
     flex-wrap: wrap; /* Allow wrapping */
     justify-content: center; /* Center horizontally */
@@ -587,7 +587,7 @@ section .section-title {
     padding: 20px 30px; /* Adjust padding */
     flex: 1; /* Allow items to grow and shrink */
     min-width: 250px; /* Minimum width before wrapping */
-    max-width: calc(50% - 20px); /* To make them parallel with gap */
+    max-width: calc(50% - 20px); /* To make them parallel (approx. half width with gap) */
     
     display: flex; /* For centering content within the box */
     align-items: center;
@@ -618,7 +618,7 @@ section .section-title {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-    .digital-footprint ul,
+    .digital-footprint .social-links-row, /* Target the social links ul specifically */
     .secondary-links-row {
         gap: 15px; /* Slightly less gap on mobile */
     }
